@@ -5,8 +5,8 @@ int                 is_prime(unsigned int number)
 {
     unsigned int    i;
 
-    if (!(number % 2))
-        return (1);
+    if (!(number % 2) && number != 2)
+        return (0);
     i = 3;
     while (i * i <= number && i < 48341)
     {
