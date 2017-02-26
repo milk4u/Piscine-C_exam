@@ -20,7 +20,11 @@ int     main(int argc, char **argv)
 
     if (argc == 3)
     {
-        arr = ft_range(atoi(argv[1]), atoi(argv[2]));
+        if (!(arr = ft_range(atoi(argv[1]), atoi(argv[2]))))
+        {
+            perror ("Fatal error. Can`t allocate memory.\n");
+            exit (1);
+        }
         print_arr(arr, get_size(atoi(argv[1]), atoi(argv[2])));
     }
     else

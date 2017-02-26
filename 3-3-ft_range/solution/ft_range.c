@@ -20,7 +20,8 @@ int             *ft_range(int start, int end)
     long    i;
     
     size = get_size(start, end);
-    arr = (int*)malloc(sizeof(int*) * size);
+    if (!(arr = (int*)malloc(sizeof(int*) * size)))
+        return (NULL);
     i = -1;
     value = start;
     while (++i < size)
